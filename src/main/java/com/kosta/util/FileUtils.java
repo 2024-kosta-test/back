@@ -29,10 +29,16 @@ public class FileUtils {
 			Long fileSize = file.getSize();
 			// 새로운 파일명 만들어주기
 			String savedFileName = UUID.randomUUID() + "_" + originalFileName;
+
+			// 업로드 경로 없을 시 디렉토리 생성
+			Path directoryPath = Paths.get(uploadPath);
+			if (!Files.exists(directoryPath)) {
+				Files.createDirectories(directoryPath);
+			}
 			
 			// 해당 경로에 파일 이미지 업로드
 			InputStream inputStream = file.getInputStream();
-			Path path = Paths.get(uploadPath).resolve(savedFileName);
+			Path path = directoryPath.resolve(savedFileName);
 			Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
 			
 			// 이상 없으면 새로운 ImageFile 객체 반환			
