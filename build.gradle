@@ -15,7 +15,7 @@ java {
 
 // Dockerfile
 jar {
-	enable: false
+	enabled= false
 }
 
 
