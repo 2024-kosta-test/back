@@ -117,7 +117,7 @@ public class WebSecurityConfig {
 			CorsConfiguration config = new CorsConfiguration();
 			config.setAllowedHeaders(Collections.singletonList("*"));
 			config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-			config.setAllowedOrigins(List.of("http://43.201.72.123", "http://costcook.shop"));
+			config.setAllowedOrigins(List.of("http://43.201.72.123", "http://costcook.shop", "http://www.costcook.shop"));
 			config.setAllowCredentials(true);
 			return config;
 		};

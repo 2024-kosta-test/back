@@ -19,7 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	public void addCorsMappings(CorsRegistry registry) {
 		registry
 			.addMapping("/**")
-			.allowedOrigins("http://43.201.72.123", "http://costcook.shop")
+			.allowedOrigins("http://43.201.72.123", "http://costcook.shop", "http://www.costcook.shop")
 			.allowedMethods("OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE")
 			.allowedHeaders("*") // 모든 헤더 허용
             .allowCredentials(true); // 자격 증명 허용 (쿠키, 인증 정보)
@@ -28,7 +28,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry
-			.addResourceHandler("api/img/**")
+			.addResourceHandler("/api/img/**")
 			.addResourceLocations("file:"+uploadPath + "\\");
 	}
 	
