@@ -13,6 +13,12 @@ java {
 	}
 }
 
+// Dockerfile
+jar {
+	enable: false
+}
+
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
